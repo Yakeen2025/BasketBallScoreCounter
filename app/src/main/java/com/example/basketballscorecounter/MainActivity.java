@@ -14,6 +14,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     int scoreofteamA=0;
     int scoreofteamB=0;
+    int b=0;
     View view;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +35,26 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId()==R.id.back){
-            view.setBackgroundResource(R.drawable.back);
+        switch (item.getItemId()) {
+            case R.id.b1:
+
+                b = 1;
+                view.setBackgroundResource(R.drawable.call);
+                return true;
+            case R.id.b2:
+                b = 2;
+                view.setBackgroundResource(R.drawable.back2);
+                return true;
+            case R.id.b3:
+                b = 3;
+                view.setBackgroundResource(R.drawable.cal);
+                return true;
+            case R.id.b4:
+                b = 4;
+                view.setBackgroundResource(R.drawable.back1);
+                return true;
         }
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -78,5 +96,8 @@ public class MainActivity extends AppCompatActivity {
         displayForTeamA(scoreofteamA);
         displayForTeamB(scoreofteamB);
     }
+
+
+
 
 }
